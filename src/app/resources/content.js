@@ -1,4 +1,5 @@
 import { InlineCode } from "@/once-ui/components";
+import { Analytics } from "@vercel/analytics/react"
 import { display } from "./config";
 
 const person = {
@@ -63,7 +64,7 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Odin Wattez, 18 jaar, tweedejaars student Software Developer. Kennis van HTML, CSS, JavaScript, een beetje C#, Python en Next.js. Gedreven om te leren en technologie creatief toe te passen. Klaar voor nieuwe uitdagingen in softwareontwikkeling!</>
+        description: <>Odin Wattez, 18 jaar, tweedejaars student Software Developer. Kennis van HTML, CSS, JavaScript, een beetje C#, Python, PHP en Next.js. Gedreven om te leren en code creatief toe te passen. Klaar voor nieuwe uitdagingen in softwareontwikkeling!</>
     },
     work: {
         display: true, // set to false to hide this section
