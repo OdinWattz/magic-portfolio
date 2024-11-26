@@ -34,7 +34,7 @@ const social = [
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:odinwattez@student.alfa-college.nl',
+    link: 'mailto:o.wattez@student.alfa-college.nl',
     },
 ]
 
@@ -43,7 +43,7 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Student Software Development</>,
-    subline: <>Ik ben Odin, Ik ben een Software Developer op het <InlineCode>Alfa-College</InlineCode>, Waar ik leer te programmeren.<br/>Buiten school, maak ik mijn eigen projecten.</>
+    subline: <>Ik ben Odin, Ik ben een Software Developer op het Alfa-College, Waar ik leer te programmeren.<br/>Buiten school, maak ik mijn eigen projecten.</>
 }
 
 const about = {
@@ -135,6 +135,24 @@ const about = {
                         height: 9
                     },
                     {
+                        src: '/images/projects/werk/projectpageportfolio.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/projects/werk/contactpageoud.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/projects/werk/cvpageportfolio.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
+                    {
                         src: '/images/projects/werk/rekensite.jpg',
                         alt: 'Project image',
                         width: 16,
@@ -177,6 +195,24 @@ const about = {
                         width: 16,
                         height: 9
                     },
+                    {
+                        src: '/images/projects/werk/blackwoodfantasyproduct.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/projects/werk/signuppage.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
+                    {
+                        src: '/images/projects/werk/loginpage.jpg',
+                        alt: 'Project image',
+                        width: 16,
+                        height: 9
+                    },
                 ]
             }
         ]
@@ -207,71 +243,6 @@ const gallery = {
     images: [
         { 
             src: '/images/gallery/oudeportfolio.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/projectpageportfolio.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/cvpageportfolio.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/contactpageoud.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/rekensite.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/portfolio2.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/pythonapp1.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/webshop.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-09.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-10.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-11.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-12.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-13.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-14.jpg', 
             alt: 'image',
             orientation: 'horizontal'
         },
