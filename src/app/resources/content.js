@@ -1,6 +1,12 @@
 import { InlineCode } from "@/once-ui/components";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import { display } from "./config";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from '@vercel/speed-insights'; 
+
+inject();
+injectSpeedInsights();
 
 const person = {
     firstName: 'Odin',
@@ -16,8 +22,8 @@ const person = {
 
 const newsletter = {
     display: false,
-    title: <>Subscribe to {person.firstName}'s Newsletter</>,
-    description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
+    title: <>Abboneer op {person.firstName}'s Nieuwsbrief</>,
+    description: <>In mijn Nieuwsbrief schrijf ik over de nieuwe projecten die ik heb toegevoegd.</>
 }
 
 const social = [
