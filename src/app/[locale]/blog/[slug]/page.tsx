@@ -9,6 +9,7 @@ import { routing } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { formatDate } from '@/app/utils/formatDate'
 import path from 'path';
+import fs from 'fs';
 
 
 interface BlogParams {
@@ -36,15 +37,44 @@ interface BlogParams {
 //     return allPosts;
 // }
 
+// export async function generateStaticParams() {
+//     const locales = routing.locales;
+//     const allPosts = [];
+
+//     for (const locale of locales) {
+//         const postsPathArray = ['src', 'app', locale, 'blog', 'posts']; // Use an array
+//         console.log(`Checking posts in: ${postsPathArray.join('/')}`);
+
+//         const posts = getPosts(postsPathArray); // Pass as an array
+//         if (!posts || posts.length === 0) {
+//             console.warn(`No posts found for locale: ${locale}`);
+//         }
+
+//         allPosts.push(...posts.map(post => ({
+//             slug: post.slug,
+//             locale: locale,
+//         })));
+//     }
+
+//     return allPosts;
+// }
+
 export async function generateStaticParams() {
-    const locales = routing.locales;
+    const locales = routing.locales; // Assuming routing.locales exists
     const allPosts = [];
 
     for (const locale of locales) {
-        const postsPathArray = ['src', 'app', locale, 'blog', 'posts']; // Use an array
-        console.log(`Checking posts in: ${postsPathArray.join('/')}`);
+        const postsDir = path.join(process.cwd(), 'src', 'app', '[locale]', 'blog', 'posts', locale); 
+        
+        console.log(`Checking posts in: ${postsDir}`);
 
-        const posts = getPosts(postsPathArray); // Pass as an array
+        // Check if directory exists
+        if (!fs.existsSync(postsDir)) {
+            console.warn(`Warning: Directory does not exist: ${postsDir}`);
+            continue; // Skip if no posts exist for this locale
+        }
+
+        const posts = getPosts([postsDir]);
         if (!posts || posts.length === 0) {
             console.warn(`No posts found for locale: ${locale}`);
         }
