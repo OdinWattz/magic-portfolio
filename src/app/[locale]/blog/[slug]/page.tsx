@@ -64,7 +64,7 @@ export async function generateStaticParams() {
     const allPosts = [];
 
     for (const locale of locales) {
-        const postsDir = path.join(process.cwd(), 'src', 'app', '[locale]', 'blog', 'posts', locale); 
+        const postsDir = path.join(process.cwd(), 'src', 'app', '[locale]', 'blog', 'posts', 'en'); 
         
         console.log(`Checking posts in: ${postsDir}`);
 
