@@ -8,7 +8,7 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { formatDate } from '@/app/utils/formatDate'
-import path from 'path';
+// import path from 'path';
 import fs from 'fs';
 
 
@@ -19,23 +19,23 @@ interface BlogParams {
     };
 }
 
-// export async function generateStaticParams() {
-// 	const locales = routing.locales;
+export async function generateStaticParams() {
+	const locales = routing.locales;
     
-//     // Create an array to store all posts from all locales
-//     const allPosts = [];
+    // Create an array to store all posts from all locales
+    const allPosts = [];
 
-//     // Fetch posts for each locale
-//     for (const locale of locales) {
-//         const posts = getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]);
-//         allPosts.push(...posts.map(post => ({
-//             slug: post.slug,
-//             locale: locale,
-//         })));
-//     }
+    // Fetch posts for each locale
+    for (const locale of locales) {
+        const posts = getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]);
+        allPosts.push(...posts.map(post => ({
+            slug: post.slug,
+            locale: locale,
+        })));
+    }
 
-//     return allPosts;
-// }
+    return allPosts;
+}
 
 // export async function generateStaticParams() {
 //     const locales = routing.locales;
@@ -59,34 +59,34 @@ interface BlogParams {
 //     return allPosts;
 // }
 
-export async function generateStaticParams() {
-    const locales = routing.locales; // Assuming routing.locales exists
-    const allPosts = [];
+// export async function generateStaticParams() {
+//     const locales = routing.locales; // Assuming routing.locales exists
+//     const allPosts = [];
 
-    for (const locale of locales) {
-        const postsDir = path.join(process.cwd(), 'src', 'app', '[locale]', 'blog', 'posts', 'en'); 
+//     for (const locale of locales) {
+//         const postsDir = path.join(process.cwd(), 'src', 'app', '[locale]', 'blog', 'posts', 'en'); 
         
-        console.log(`Checking posts in: ${postsDir}`);
+//         console.log(`Checking posts in: ${postsDir}`);
 
-        // Check if directory exists
-        if (!fs.existsSync(postsDir)) {
-            console.warn(`Warning: Directory does not exist: ${postsDir}`);
-            continue; // Skip if no posts exist for this locale
-        }
+//         // Check if directory exists
+//         if (!fs.existsSync(postsDir)) {
+//             console.warn(`Warning: Directory does not exist: ${postsDir}`);
+//             continue; // Skip if no posts exist for this locale
+//         }
 
-        const posts = getPosts([postsDir]);
-        if (!posts || posts.length === 0) {
-            console.warn(`No posts found for locale: ${locale}`);
-        }
+//         const posts = getPosts([postsDir]);
+//         if (!posts || posts.length === 0) {
+//             console.warn(`No posts found for locale: ${locale}`);
+//         }
 
-        allPosts.push(...posts.map(post => ({
-            slug: post.slug,
-            locale: locale,
-        })));
-    }
+//         allPosts.push(...posts.map(post => ({
+//             slug: post.slug,
+//             locale: locale,
+//         })));
+//     }
 
-    return allPosts;
-}
+//     return allPosts;
+// }
 
 
 export function generateMetadata({ params: { slug, locale } }: BlogParams) {
