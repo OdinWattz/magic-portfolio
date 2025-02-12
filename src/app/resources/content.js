@@ -1,9 +1,9 @@
 import { InlineCode } from "@/once-ui/components";
 import { Analytics } from "@vercel/analytics/react";
 import { display } from "./config";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { inject } from "@vercel/analytics";
 import { injectSpeedInsights } from '@vercel/speed-insights'; 
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 inject();
 injectSpeedInsights();
@@ -49,7 +49,7 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Student Software Development</>,
-    subline: <>Ik ben Odin, Ik ben een Software Developer op het Alfa-College, Waar ik leer te programmeren.<br/>Buiten school, maak ik mijn eigen projecten.</>
+    subline: <>Ik ben Odin, Ik ben een Software Developer op het Alfa-College, Waar ik leer te programmeren.<br/>Buiten school, maak ik mijn eigen projecten en doe ik andere dingen.</>
 }
 
 const about = {
@@ -70,7 +70,7 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Odin Wattez, 18 jaar, tweedejaars student Software Developer. Kennis van HTML, CSS, JavaScript, een beetje C#, Python, PHP en Next.js. Gedreven om te leren en code creatief toe te passen. Klaar voor nieuwe uitdagingen in softwareontwikkeling!</>
+        description: <>Odin Wattez, 19 jaar, tweedejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP en Next.js. Gedreven om te leren en code creatief toe te passen. Klaar voor nieuwe uitdagingen in softwareontwikkeling!</>
     },
     work: {
         display: true, // set to false to hide this section
@@ -119,6 +119,11 @@ const about = {
                 name: 'Alfa-College Groningen',
                 role: 'Software Developer',
                 description: <>Doe de opleiding Software Development<br/>2023 - Present</>,
+            },
+            {
+                name: 'Alfa-college Groningen',
+                role: 'Technicus Engineering/Technischus Informatica',
+                description: <>Deed de opleiding Technicus Engineering en Technicus Informatica<br/>2022 - 2023</>,
             },
             {
                 name: 'Dr. Nassau College Beilen',
