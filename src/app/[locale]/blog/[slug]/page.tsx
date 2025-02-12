@@ -8,6 +8,8 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { formatDate } from '@/app/utils/formatDate'
+import path from 'path';
+
 
 interface BlogParams {
     params: { 
@@ -16,15 +18,37 @@ interface BlogParams {
     };
 }
 
-export async function generateStaticParams() {
-	const locales = routing.locales;
+// export async function generateStaticParams() {
+// 	const locales = routing.locales;
     
-    // Create an array to store all posts from all locales
+//     // Create an array to store all posts from all locales
+//     const allPosts = [];
+
+//     // Fetch posts for each locale
+//     for (const locale of locales) {
+//         const posts = getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]);
+//         allPosts.push(...posts.map(post => ({
+//             slug: post.slug,
+//             locale: locale,
+//         })));
+//     }
+
+//     return allPosts;
+// }
+
+export async function generateStaticParams() {
+    const locales = routing.locales;
     const allPosts = [];
 
-    // Fetch posts for each locale
     for (const locale of locales) {
-        const posts = getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]);
+        const postsPathArray = ['src', 'app', locale, 'blog', 'posts']; // Use an array
+        console.log(`Checking posts in: ${postsPathArray.join('/')}`);
+
+        const posts = getPosts(postsPathArray); // Pass as an array
+        if (!posts || posts.length === 0) {
+            console.warn(`No posts found for locale: ${locale}`);
+        }
+
         allPosts.push(...posts.map(post => ({
             slug: post.slug,
             locale: locale,
@@ -33,6 +57,7 @@ export async function generateStaticParams() {
 
     return allPosts;
 }
+
 
 export function generateMetadata({ params: { slug, locale } }: BlogParams) {
 	let post = getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]).find((post) => post.slug === slug)
