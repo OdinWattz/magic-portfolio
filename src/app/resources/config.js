@@ -1,4 +1,4 @@
-const baseURL = 'odinwattz.nl'
+const baseURL = 'odinwattez.nl'
 
 // Enable localization
 const i18n = false;
@@ -13,8 +13,6 @@ const routes = {
     '/':        true,
     '/about':   true,
     '/work':    true,
-    '/blog':    true,
-    '/gallery': true,
 }
 
 // Enable password protection on selected routes

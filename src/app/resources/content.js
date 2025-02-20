@@ -20,12 +20,6 @@ const person = {
     languages: ['Nederlands', 'Engels'] 
 }
 
-const newsletter = {
-    display: false,
-    title: <>Abboneer op {person.firstName}'s Nieuwsbrief</>,
-    description: <>In mijn Nieuwsbrief schrijf ik over de nieuwe projecten die ik heb toegevoegd.</>
-}
-
 const social = [
     {
         name: 'GitHub',
@@ -230,34 +224,13 @@ const about = {
     }
 }
 
-const blog = {
-    display: false,
-    label: 'Voortgang',
-    title: 'Waar ik nu mee bezig ben:',
-    description: `Lees wat ${person.name} recent mee bezig is geweest`,
-    // Create new blog posts by adding a new .mdx file to app/blog/posts
-    // All posts will be listed on the /blog route
-}
-
 const work = {
     label: 'Projecten',
     title: 'Mijn projecten',
     description: `Design en dev projecten door ${person.name}`
-    // Create new project pages by adding a new .mdx file to app/blog/posts
     // All projects will be listed on the /home and /work routes
 }
 
-const gallery = {
-    label: 'Gallerij',
-    title: 'My photo gallery',
-    description: `A photo collection by ${person.name}`,
-    images: [
-        { 
-            src: '/images/gallery/oudeportfolio.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-    ]
-}
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+
+export { person, social, home, about, work };
