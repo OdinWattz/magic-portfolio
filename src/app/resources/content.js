@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { display } from "./config";
 import { inject } from "@vercel/analytics";
 import { injectSpeedInsights } from '@vercel/speed-insights'; 
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 inject();
 injectSpeedInsights();
@@ -56,10 +55,6 @@ const about = {
     },
     avatar: {
         display: true
-    },
-    calendar: {
-        display: false,
-        link: 'https://cal.com'
     },
     intro: {
         display: true,
@@ -230,7 +225,5 @@ const work = {
     description: `Design en dev projecten door ${person.name}`
     // All projects will be listed on the /home and /work routes
 }
-
-
 
 export { person, social, home, about, work };
