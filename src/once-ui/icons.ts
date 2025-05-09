@@ -55,8 +55,8 @@ export const iconLibrary: Record<string, IconType> = {
 	book: PiBookBookmarkDuotone,
 	close: HiMiniXMark,
 	openLink: HiOutlineLink,
-
 	home: PiHouseDuotone,
+	gallery: PiImageDuotone,
 	discord: FaDiscord,
 	github: FaGithub,
 	linkedin: FaLinkedin,

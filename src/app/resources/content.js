@@ -59,14 +59,14 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Odin Wattez, 19 jaar, tweedejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP, Wordpress, Docker en Next.js. Gedreven om te leren en code creatief toe te passen. Klaar voor nieuwe uitdagingen in softwareontwikkeling!</>
+        description: <>Odin Wattez, 19 jaar, tweedejaars student Software Developer. Kennis van HTML, CSS, JavaScript, Python, PHP, Wordpress, Docker en Next.js. Gedreven om te leren en code creatief toe te passen!</>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Werk Ervaring',
         experiences: [
             {
-                company: 'Zorgboodschap Meppel',
+                company: 'Zorgboodschap Ommen',
                 timeframe: '2023 - Present',
                 role: 'Magazijnmedewerker en Bezorger',
                 achievements: [
@@ -77,6 +77,23 @@ const about = {
                     {
                         src: '/images/projects/werk/zorgboodschap.jpg',
                         alt: 'Zorgboodschap',
+                        width: 16,
+                        height: 9
+                    }
+                ]
+            },
+            {
+                company: 'Dappr Hoogeveen',
+                timeframe: '2025 - Present',
+                role: 'Stagiar Software Developer',
+                achievements: [
+                    <>Hier loop ik stage vanaf Februari 2025 tot Juli 2025.</>,
+                    <>Ik maak hier projecten en help hun met bepaalde software opdrachten.</>
+                ],
+                images: [
+                    {
+                        src: '/images/projects/werk/dappr.png',
+                        alt: 'Dappr',
                         width: 16,
                         height: 9
                     }
@@ -214,6 +231,19 @@ const about = {
                         height: 9
                     },
                 ]
+            },
+            {
+                title: 'Wordpress',
+                description: <>Ik heb met Wordpress een website gemaakt om het te leren voor op mijn stage.</>,
+                images: [
+                    {
+                        src: '/images/projects/Ramensite-Odin/Producten-Odin.png',
+                        alt: 'Project image',
+                        width: 16, 
+                        height: 9
+                    }
+                    
+                ]
             }
         ]
     }
@@ -226,4 +256,17 @@ const work = {
     // All projects will be listed on the /home and /work routes
 }
 
-export { person, social, home, about, work };
+const gallery = {
+    label: 'Gallerij',
+    title: 'My photo gallery',    title: 'My photo gallery',
+    description: `A photo collection by ${person.name}`,
+    images: [
+        { 
+            src: '/images/projects/Producten-Odin.png',
+            alt: 'image',
+            orientation: 'horizontal'
+        },
+    ]
+}
+
+export { person, social, home, about, work, gallery };
